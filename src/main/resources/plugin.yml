@@ -1,0 +1,9 @@
+name: Repair
+version: 1.0.0
+main: it.axiid.Repair
+author: Axiid
+commands:
+  repair:
+    description: main command
+    aliases:
+      - rep
