@@ -14,9 +14,14 @@ public class MainCommand implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args)
     {
 
-        Player p = (Player) sender;
         FileConfiguration config = Repair.getInstance().getConfig();
-
+        
+        if(!(sender instanceof Player)) {
+            sender.sendMessage("Non puoi fare questo da console.");
+        }
+        
+        Player p = (Player) sender;
+        
         if(p.hasPermission("repair.use")) {
             if(!(p.getItemInHand().getType() == Material.AIR)) {
                 if(p.getItemInHand().getDurability() != 0) {
