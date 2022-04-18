@@ -13,6 +13,10 @@ public class MainCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args)
     {
+        
+        if(!(sender instanceof Player)){
+         return false;   
+        }
 
         FileConfiguration config = Repair.getInstance().getConfig();
         
